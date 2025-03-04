@@ -7,3 +7,4 @@ app = FastAPI()
 model.Base.metadata.create_all(bind=engine)
 
 app.include_router(comida.router)
+#app.include_router(comidaDB.router)
