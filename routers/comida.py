@@ -1,6 +1,5 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-import requests
 
 router = APIRouter(prefix="/comida",
                    tags=["comida"],
@@ -33,16 +32,11 @@ async def findByID(id: int):
 @router.post("/", response_model=Comida, status_code=201)
 async def save(comida: Comida):
 
-    response = requests.post('http://localhost:8000/comida/')
-
     if type(buscarComidaPorID(comida.id)) == Comida:
         raise HTTPException(status_code=404, detail=f"Ya existe una comida con ID: {comida.id}.")
 
-    if response.status_code == 422:
-        return {"error": "No se ha podido editar la comida."}
-    else:
-        listaComidas.append(comida)
-        return comida
+    listaComidas.append(comida)
+    return comida
 
 # edit
 @router.put("/")
@@ -80,7 +74,3 @@ def buscarComidaPorID(id: int):
         return list(comidaFiltrada)[0]
     except:
         return {"error": f"No se ha encontrado ninguna comida con ID: {id}."}
-    
-def validarComida(comida:Comida):
-    if not type(comida.nombre):
-        comida.nombre == "hjtg"
