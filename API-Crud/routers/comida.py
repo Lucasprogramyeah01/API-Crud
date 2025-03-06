@@ -57,7 +57,7 @@ async def save(comida: Comida):
 async def edit(id: int, comida: Comida):
 
     if any(c.nombre == comida.nombre for c in listaComidas):
-        return HTTPException(status_code=409, detail=f"No se ha podido editar la comida, ya existe una con nombre: {comida.nombre}.")
+        raise HTTPException(status_code=409, detail=f"No se ha podido editar la comida, ya existe una con nombre: {comida.nombre}.")
     else:
         comidaDeLista = buscarComidaPorID(id)
         comidaDeLista.nombre = comida.nombre
