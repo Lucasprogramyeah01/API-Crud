@@ -1,0 +1,16 @@
+INSERT INTO comida (id, nombre, paisProcedencia, numIngredientes, precio) VALUES
+(1, 'Tortilla de patatas', 'España', 5, 9.20),
+(2, 'Rabo de toro', 'España', 16, 15.10),
+(3, 'Bouneschlupp', 'Luxemburgo', 12, 19.99),
+(4, 'Fish & chips', 'Reino Unido', 12, 7.67),
+(5, 'Schnitzel Holstein', 'Alemania', 7, 17.50),
+(6, 'Ceviche', 'Perú', 6, 14.30),
+(7, 'Kimchi', 'Corea del Sur', 8, 5.99),
+(8, 'Pad Thai', 'Tailandia', 10, 13.45),
+(9, 'Moussaka', 'Grecia', 9, 12.80),
+(10, 'Goulash', 'Hungría', 11, 18.75),
+(11, 'Poutine', 'Canadá', 4, 8.50),
+(12, 'Paella', 'España', 15, 21.00),
+(13, 'Sushi', 'Japón', 6, 22.50),
+(14, 'Borscht', 'Ucrania', 7, 10.90),
+(15, 'Feijoada', 'Brasil', 13, 16.60);
