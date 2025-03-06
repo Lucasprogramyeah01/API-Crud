@@ -36,9 +36,6 @@ def edit(id: int, comidaActualizada: comida.Comida, db: Session = Depends((getDB
     return comidaEditada
 
 # delete
-@router.delete("/{id}", response_model=comida.Comida)
+@router.delete("/{id}", status_code=204)
 def delete(id: int, db: Session = Depends(getDB)):
-    comidaBorrada = crud.delete(db, id)
-    if comidaBorrada is None:
-        raise HTTPException(status_code=404, detail=f"No se encontrado ninguna comida con ID: {id}.")
-    return comidaBorrada
+    crud.delete(db, id)
