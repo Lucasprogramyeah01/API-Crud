@@ -10,7 +10,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 # Dependencia para obtener la sesión de la Base de Datos
-def get_db():
+def getDB():
     db = SessionLocal()
     try:
         yield db
