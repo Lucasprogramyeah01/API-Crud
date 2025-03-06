@@ -1,2 +1,2 @@
 # API-Crud
-API Crud sobre comida a desarrollar con FastAPI.
+API-Crud sobre comida a desarrollar con **FastAPI** y **SQLAlchemy**.
